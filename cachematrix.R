@@ -5,7 +5,10 @@
 
 makeCacheMatrix <- function(x = matrix()) {
 	inv <- NULL ## inverse matrix
-	print(x)
+
+	if (!is.matrix(x)) 
+		x <- as.matrix(x)
+
 	set <- function(newX) {
 		x <<- newX
 		inv <<- NULL
